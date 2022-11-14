@@ -1,0 +1,17 @@
+.online {
+    --menu-bg-color: #ba122b;
+    --primnav-li-hover: #cc001f;
+    --secnav-li-hover: #e20022;
+    --text-color-light: rgba(255,255,255,.8);
+    --secnav-li-border: #a00f2566;
+    --li-light-bg-hover: #fcdddde3;
+}
+
+.offline {
+    --menu-bg-color: #bababa;
+    --primnav-li-hover: #c4c4c4;
+    --secnav-li-hover: #d4d4d4;
+    --text-color-light: rgba(255,255,255,.8);
+    --secnav-li-border: rgba(128, 128, 128, 0.384);
+    --li-light-bg-hover: #f7f7f7e3;
+}

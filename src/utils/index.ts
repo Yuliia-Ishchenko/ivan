@@ -1,0 +1,3 @@
+
+export { loggedModel} from "./NavMenuModel"
+

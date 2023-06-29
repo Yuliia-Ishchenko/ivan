@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import Login from '@/views/Login.vue'
 import Import from '@/views/Import.vue'
+import TestLocation from '@/views/TestLocation.vue'
 import store from "@/store";
 
 const routes: Array<RouteRecordRaw> = [
@@ -12,9 +13,9 @@ const routes: Array<RouteRecordRaw> = [
     component: Import
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
+    path: '/testlocation',
+    name: 'TestLocation',
+    component: TestLocation
   },
   {
     path: '/home',

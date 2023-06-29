@@ -111,6 +111,7 @@ const showBtnGenerate = computed(()=>{
 })
 const btnGenerateLabel = computed(()=>{return`Generate data for ${selectedBoxes.value.length} boxes`})
 const cableGands = ref(JSON.parse(localStorage.getItem('cableGands')))
+console.log(localStorage);
 const lastLoadData = ref(localStorage.getItem('lastLoadCableGands'))
 const Glands = ref({GlandsExcelList:cableGands, UniqueManufacture: [], UniqueMaterial:[]})
 const Cable = ref({CableExcelList:[], UniqueBoxes:[],Errors:[]})

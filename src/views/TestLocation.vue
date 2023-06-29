@@ -1,7 +1,9 @@
 <template>
   <div class="test-location">
     <div> 
-      <h3>{{userLocation}}</h3> 
+      <h4>{{userLocation}}</h4> 
+      <p>Latitude: {{latitude}}</p>
+      <p>Longitude: {{longitude}}</p>
       <Button icon="pi pi-external-link" label="Get Location" @click="OnGetLocation($event)" />
     </div>
   </div>
@@ -13,14 +15,17 @@ import {onMounted, reactive, ref, watch,  computed, onUpdated} from 'vue'
 
 const store = GI.useStore()
 const userLocation=ref("")
+const latitude=ref()
+const longitude=ref()
 const success = async (position) => {
-   const latitude  = position.coords.latitude;
-   const longitude = position.coords.longitude;
-   const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&zoom=25&format=json`
-   await fetch(url)
+   console.log(position);
+   latitude.value  = position.coords.latitude;
+   longitude.value = position.coords.longitude;
+   const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude.value}&lon=${longitude.value}&zoom=25&format=json`
+   fetch(url)
             .then(response=>response.json()).then(data=>{
                console.log(data);
-               userLocation.value=`City: ${data.address.city}  Street: ${data.address.road}  House: ${data.address.house_number}`
+               userLocation.value=`City: ${data.address.city},  Street: ${data.address.road}, House: ${data.address.house_number}`
             })
             .catch(error=>console.log(error));
 
@@ -36,9 +41,11 @@ async function OnGetLocation(event){
       console.log("Geolocation API is not supported in your browser.");
    }
    const options = {
-      maximumAge:0, timeout:5000, enableHighAccuracy: true
+      // maximumAge:0, 
+      // timeout:5000, 
+      enableHighAccuracy: true
    };
-   await navigator.geolocation.getCurrentPosition(await success, error, options);
+   navigator.geolocation.getCurrentPosition( success, error, options);
    
 }
 

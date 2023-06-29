@@ -1,3 +1,3 @@
-module.exports = {
-   publicPath: 'kmldsfkljdflkmmkldf',
- };
+// module.exports = {
+//    publicPath: './',
+//  };

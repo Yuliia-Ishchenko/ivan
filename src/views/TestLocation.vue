@@ -21,7 +21,8 @@ const success = async (position) => {
    console.log(position);
    latitude.value  = position.coords.latitude;
    longitude.value = position.coords.longitude;
-   const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude.value}&lon=${longitude.value}&zoom=25&format=json`
+   // const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude.value}&lon=${longitude.value}&zoom=25&format=json`
+   const url = `https://eu1.locationiq.com/v1/reverse?key=pk.41e0158971d0c569db2d51896c22573b&lat=${latitude.value}&lon=${longitude.value}&format=json`
    fetch(url)
             .then(response=>response.json()).then(data=>{
                console.log(data);

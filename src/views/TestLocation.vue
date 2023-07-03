@@ -26,7 +26,7 @@ const success = async (position) => {
    fetch(url)
             .then(response=>response.json()).then(data=>{
                console.log(data);
-               userLocation.value=`City: ${data.address.city},  Street: ${data.address.road}, House: ${data.address.house_number}`
+               userLocation.value=`${data.display_name}`
             })
             .catch(error=>console.log(error));
 

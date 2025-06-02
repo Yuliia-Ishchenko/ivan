@@ -5,6 +5,7 @@ import Login from '@/views/Login.vue'
 import Import from '@/views/Import.vue'
 import TestLocation from '@/views/TestLocation.vue'
 import store from "@/store";
+import NewImport from '@/views/NewImport.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,6 +27,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     name: 'Login',
     component: Login,
+
+  },
+   {
+    path: '/NewImport',
+    name: 'NewImport',
+    component: NewImport,
 
   },
 ]

@@ -9,21 +9,23 @@
 </template>
 
 <script setup>
-import * as GI from '@/utils/GlobalImport'
-  import { ref, computed, watch } from 'vue'
+  import { ref, } from 'vue'
   import Menubar from "primevue/menubar";
   import "@/assets/css/menu-bar.css";
-  import {loggedModel, logoutModel} from '@/utils'
 
-  const route = GI.useRoute();
-  const router = GI.useRouter();
-  const store = GI.useStore()
-  const menuModel = ref()
 
-  watch(()=>route.name,()=>{
-    menuModel.value = route.name=='Login'?logoutModel:loggedModel
-  })
-  
+  const menuModel = ref([
+    {
+        label: 'Cable glands',
+        to: '/',
+    },
+    {
+        to: '/NewImport',
+        label: 'IO List Generator',
+    },
+  ])
+
+
   
 </script>
 
